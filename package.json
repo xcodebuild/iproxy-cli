@@ -1,11 +1,17 @@
 {
-  "name": "ts-zero-example",
+  "name": "iproxy-cli",
   "version": "1.0.0",
   "main": "dist/index.js",
+  "bin": {
+    "iproxy": "bin/iproxy"
+  },
   "author": "me@xcodebuild.com",
   "license": "MIT",
   "devDependencies": {
+    "@types/fs-extra-promise": "^1.0.10",
     "@types/jest": "^27.0.2",
+    "@types/shelljs": "^0.8.9",
+    "@types/xo": "^0.39.1",
     "jest": "^27.3.1",
     "microbundle": "^0.14.1",
     "ts-jest": "^27.0.7",
@@ -17,5 +23,10 @@
     "test": "jest",
     "lint": "xo --fix --prettier",
     "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "fs-extra-promise": "^1.0.1",
+    "shelljs": "^0.8.4"
   }
 }

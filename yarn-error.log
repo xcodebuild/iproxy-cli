@@ -1,0 +1,59 @@
+Arguments: 
+  /Users/xcodebuild/.nvm/versions/node/v14.17.3/bin/node /Users/xcodebuild/.nvm/versions/node/v14.17.3/bin/yarn add fs-extra-promise minist
+
+PATH: 
+  /Users/xcodebuild/.nvm/versions/node/v14.17.3/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin:/Users/xcodebuild/.nvm/versions/node/v14.17.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Applications/Sublime Text.app/Contents/SharedSupport/bin:/Users/xcodebuild/.nvm/versions/node/v14.17.3/bin:/opt/homebrew/bin:/opt/homebrew/sbin
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.17.3
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: https://registry.npmjs.org/minist: Not found
+      at Request.params.callback [as _callback] (/Users/xcodebuild/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:66988:18)
+      at Request.self.callback (/Users/xcodebuild/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:140662:22)
+      at Request.emit (events.js:375:28)
+      at Request.<anonymous> (/Users/xcodebuild/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:141634:10)
+      at Request.emit (events.js:375:28)
+      at IncomingMessage.<anonymous> (/Users/xcodebuild/.nvm/versions/node/v14.17.3/lib/node_modules/yarn/lib/cli.js:141556:12)
+      at Object.onceWrapper (events.js:481:28)
+      at IncomingMessage.emit (events.js:387:35)
+      at endReadableNT (internal/streams/readable.js:1317:12)
+      at processTicksAndRejections (internal/process/task_queues.js:82:21)
+
+npm manifest: 
+  {
+    "name": "iproxy-cli",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "bin": {
+      "iproxy": "bin/iproxy"
+    },
+    "author": "me@xcodebuild.com",
+    "license": "MIT",
+    "devDependencies": {
+      "@types/jest": "^27.0.2",
+      "jest": "^27.3.1",
+      "microbundle": "^0.14.1",
+      "ts-jest": "^27.0.7",
+      "xo": "^0.46.4"
+    },
+    "scripts": {
+      "build": "microbundle build src/entry/*.ts -no-compress",
+      "start": "NODE_ENV=development microbundle watch src/entry/*.ts -no-compress",
+      "test": "jest",
+      "lint": "xo --fix --prettier",
+      "prepublish": "npm run build"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
