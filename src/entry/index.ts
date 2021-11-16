@@ -3,6 +3,7 @@ import colors from 'colors';
 import shell from 'shelljs';
 import path from 'path';
 import { exec } from 'child_process';
+import exitHook from 'exit-hook';
 
 const isRunning = (query: string) => {
     let platform = process.platform;
@@ -61,6 +62,14 @@ const run = async () => {
 	}
 	
 	console.log(colors.green(`iProxy rule is actived! ${config.name}`));
+
+	exitHook(() => {
+		shell.exec(`${IPROXY_BIN} --call ${decodeURIComponent(JSON.stringify({
+			type: 'inactive-rule',
+			id: config.id,
+		}))}`);
+		console.log(colors.green(`iProxy rule is disabled! ${config.name}`));
+	});
 };
 
 run();

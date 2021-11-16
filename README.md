@@ -1,26 +1,21 @@
-## ts-zero
-
-ts-zero is a tiny starter project for create Typescript library with zero-configuration build/watch/test/lint.
-
-- Build and watch with [microbundle](https://github.com/developit/microbundle)
-- Test with jest and [ts-jest](https://www.npmjs.com/package/ts-jest)
-- Lint with [xo](https://github.com/xojs/xo)
-
-## Usage
+# iproxy-cli
 
 ```shell
-git clone https://github.com/xcodebuild/ts-zero your-project
-cd your-project
-npm install
-# watch
-npm run start
-
-# build
-npm run build
-
-# test
-npm run test
-
-# lint
-npm run lint
+npm install -g iproxy-cli
 ```
+
+## iproxy.config.js
+
+Put your proxy rule in `iproxy.config.js`.
+
+```js
+module.exports = {
+    id: 'rule id',
+    name: 'rule name',
+    rule: `# Rule contnet`,
+};
+```
+
+## enable
+
+Run `iproxy` to active rule, ctrl-c to interrupt program then disable rule.
